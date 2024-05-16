@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+@keyframes appear {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes validationAnimation {
+    0% {
+        visibility: visible;
+        height: 0;
+    }
+    30% {
+        height: 100%;
+    }
+    70%{
+        height: 100%;
+    }
+    100%{
+        height: 0;
+        display: none;
+    }
+}
+
+
+
+#room-schedule-side-infos{
+    width: 450px;
+    position: absolute;
+    height: 700px;
+    margin-top: 20px;
+    right: 0;
+    display: grid;
+    grid-template-rows: 100px 133px 133px 150px 50px 50px;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 10px;
+    padding: 0 10px 10px 0px;
+    box-sizing: border-box;
+    z-index: 2;
+    border: 2px solid rgba(160,160,160,0.8);
+    border-radius: 10px;
+    transition: all 0.2s;
+}
+
+.close{
+    transform: translate(450px,0);
+}
+
+#room-schedule-side-infos #open-close-button{
+    position: absolute;
+    left: -20px;
+    top: 0;
+    transform: translate(-40px, calc(350px - 50%));
+    height: 200px;
+    width: 60px;
+    border-radius: 50px 0 0 50px;
+    border: 0;
+    background-color: #F0AB02;
+    font-size: 50px;
+}
+
+#room-schedule-side-infos:after{
+    background-color: rgba(160,160,160,0.6);
+    filter: blur(5px);
+    content: ' ';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    padding: 0 10px 10px 0px;
+
+}
+
+#room-schedule-side-infos button{
+    grid-column: span 3;
+    align-self: end;
+    border: none;
+}
+
+#room-info-name{
+    width: 110%;
+    background-color: #FFBC0F;
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', serif;
+    font-size: 45px;
+    font-weight: bold;
+    margin-right: 5px;
+    border-radius: 10px 0 10px 0;
+}
+
+.room-info{
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    display: flex;
+    max-width: 130px;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+}
+
+.room-info input,
+.room-info select{
+    width: 100%;
+    margin: 0;
+    height: 25%;
+    position: absolute;
+    bottom: 0;
+    border: none;
+    text-align: center;
+    pointer-events: none;
+    font-family: 'Inter', serif;
+    font-weight: bolder;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(240,171,2,0.3);
+    border-radius: 10px;
+}
+
+.room-info img{
+    width: auto;
+    height: 50%;
+    margin-bottom: 20%;
+}
+
+#modif-button,
+#reserv-button,
+#confirm-button,
+#cancel-button{
+    width: 95%;
+    height: 50px;
+    border-radius: 20px;
+    font-family: 'Inter', serif;
+    font-size: 20px;
+    justify-content: center;
+    margin: 0 auto;
+    font-weight: bold;
+    animation: appear 0.3s ease-in;
+    transition: all 0.2s;
+}
+
+#modif-button:hover,
+#reserv-button:hover,
+#confirm-button:hover,
+#cancel-button:hover{
+    transform: scale(1.05);
+}
+
+
+#modif-button{
+    background-color: #F0AB02;
+}
+
+#reserv-button{
+    background-color: #5D7EF3;
+}
+
+#confirm-button{
+    background-color: #6CD088;
+    display: none;
+}
+
+#cancel-button{
+    background-color: #de3448;
+    display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+#has-projector-container input{
+    cursor: pointer;
+ }
+
+#cable-type-container input{
+    font-size: 16px;
+    width: 100%;
+    line-break: auto;
+}
+
+.editable{
+    transition: all 0.2s;
+    border-bottom: solid 5px #F0AB02 !important;
+}
+
+#validationScreen{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    overflow-y: hidden;
+    background-color: #e2e2e2;
+    visibility: hidden;
+}
+
+.validation-animation{
+    animation: validationAnimation 1.75s forwards ease-in;
+}
+
+
+#check-gif{
+    left: 235px;
+    top: 300px;
+    width: 100px;
+    z-index: 2;
+    animation: checkAnimation 2s forwards ease-in;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#validationScreen p {
+    left: 235px;
+    top: 400px;
+    color: #6CD088;
+    font-size: 26px;
+    font-family: 'Inter', serif;
+    z-index: 2;
+    font-weight: bold;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+#room-status-container{
+    grid-column: span 3;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+
+}
+
+#room-status-container p {
+    font-family: Inter, serif;
+    font-size: 18px;
+    font-weight: bold;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.2rem 5rem;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+#reserv-room-form{
+    width: 100%;
+    grid-column: span 3;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+}
+.room-locked{
+    color: #9b5f04;
+    background-color: rgb(251, 223, 105);
+}
+
+.room-occupied{
+    color: #6a0104;
+    background-color: rgb(246, 93, 93);
+}
+
+.room-open{
+    color: #134124;
+    background-color: rgba(113, 248, 79, 1);
+}

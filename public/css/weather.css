@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+.Infos .Weather {
+  box-sizing: border-box;
+  border-top: solid 1px #FFF;
+  font-size: 1.6vw;
+  text-align: center;
+  width: 100%;
+  height: 5vh;
+  margin-bottom: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Infos {
+  width: 100%;
+  box-sizing: border-box;
+  color: #111111;
+  text-align: left;
+}
+
+#Weather {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  color: #111111;
+  height: 20%;
+  font-family: 'Lato', sans-serif;
+}
+
+.TemperatureData {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#temperature {
+  font-size: 4.3em;
+  font-weight: 500;
+}
+
+.degree {
+  font-size: 1em;
+  vertical-align: super;
+}
+
+#wind,
+#humidity,
+#SunsetTime {
+  font-size: 1em;
+  font-family: 'Inter', serif;
+}
+
+.WeatherIcon img {
+  width: 130px;
+  height: 130px;
+}
+
+.WeatherIcon{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 90%;
+  gap: 20px;
+}
